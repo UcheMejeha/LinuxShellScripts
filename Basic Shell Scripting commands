@@ -1,0 +1,46 @@
+
+>> Basic Shell Scripting commands
+
+1. ls --> list files and folders
+2. pwd --> present working directory - gives you your current directory
+3. cd --> change directory - helps you to move from one directory to another
+4. cd .. --> go back to one directory back
+5. cd ../.. --> takes two steps back
+6. ls -ltr -> provides details of the files and folders (with their properties including time stamp etc.)
+7. touch <file name> --> used to create files
+8. vi <file_name> --> modify files (note: click 'i' to insert or write in the file); note vi command is available by default on any linux platform; vim is not automatic, it has to be installed.
+9. cat <file_name> --> use to print the file
+10.mkdir --> create directory or folder
+11. rm remove file
+12. rm -r --> remove directory (check rm -rf)
+13  free -> check system properties
+14. nproc --> number of CPUs
+15. df -h --> disk size
+16. top --> gives entire computer/server information (note a popular interview question)
+17. chmod --> grants permissions for file access/execution (4 - read; 2 - write; 1 - execute)
+	Chmod XYZ <file_name> (X - user; Group; everyone)
+18. History --> gives you a history of the commands used in the session
+19. man + <command> --> manual to describe the command indicated.
+20. :wq! --> save a exit a file
+21. top --> used to monitor node health
+22. df -h --> print your disc space
+23. set -x --> shows commands in debug mode, i.e. it shows the command used in the output. It can be used to replace the echo statement.
+24. ps -ef --> shows details of the processes in full format (question?? what are demon processes and ghost processes?? research)
+25. grep "specific process" --> allows you to determine the specific processes running at the momment. Eg. ps -ef | grep "Amazon".
+	grep can also be used to retrieve specific information from a file. grep <information you want to retrieve> file name
+26. | pipe parameter --> used to send output of first command to the second command. example sh test.sh | grep 1
+27. date ---> shows date (review the concept of system default execution like date. understand the concept of stdin/stdout/stderr)
+28. awk --> pattern scanning and processing lnaguage. Can be used to provide a specific outcome froma command eg.
+		ps -ef | grep Amazon | awk -F " " '{print $2}' (print $2 prints value of the column)
+29. set -e --> exists the script when there's an error
+30. set -o pipefail --> used to exit script in case of error following a pipe feed fail. Without this syntax the pipe feed will execute as per usual (this is because the script only checks the authenticity of the last command in a pipe feed. So if the last command is OK, the script is executed ignoring the errors in the script)
+31. logfile - find errors in the logfile
+32. curl <logfile location on github, s3 etc) (use "man curl" command to get the details of this command) curl -X GET api.foo.com
+33. wget --> can also be used to like curl, however it will download the file in the pwd, before extracting the informatio required.
+NOTE interview question --> what is the difference between wget & curl
+34. find --> Find command. example find / -name pam
+35. sudo su -   --> takes you to the root user account to execute some key commands (sudo means substitute user) su(switch user) eg. sudo Uche_std 
+36. sudo allows you to run some commands on behalf of the speficied account. eg. the root user without switching to the account.
+37. if loop, if else loop, for loop
+38. trap
+39. Kill --> used to kill a process
